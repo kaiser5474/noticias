@@ -11,7 +11,7 @@ const Noticia = ({ noticia }) => {
           <span className="card-title">{source.name}</span>
         </div>
         <div className="card-content">
-          <h4>{title}</h4>
+          <h4 className={styles.titulo}>{title}</h4>
           <p className={styles.resumen}>{description}</p>
         </div>
         <div className={`card-action ${styles.botonIrNoticia}`}>

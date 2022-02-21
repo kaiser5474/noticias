@@ -15,7 +15,6 @@ function App() {
       const respuesta = await fetch(url);
       const resultado = await respuesta.json();
       setNoticias(resultado.articles);
-      console.log(resultado);
     };
     consultarAPI();
   }, [categoria]);
