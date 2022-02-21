@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./Formulario.module.css";
 import useSelect from "../hooks/useSelect";
+import { PaisesSelect } from "../Helpers";
 
-const Formulario = ({ setCategoria }) => {
+const Formulario = ({ setCategoria, setPais }) => {
   //custom hooks
   const OPCIONES = [
     { value: "general", label: "General" },
@@ -14,77 +15,15 @@ const Formulario = ({ setCategoria }) => {
     { value: "technology", label: "Tecnología" },
     { value: "sources", label: "Tecnología" },
   ];
-  const OPCIONESPAISES = [
-    { value: "ae", label: "Emiratos Arabes" },
-    { value: "ar", label: "Negocios" },
-    { value: "at", label: "Entretenimiento" },
-    { value: "health", label: "Salud" },
-    { value: "science", label: "Ciencia" },
-    { value: "sports", label: "Deportes" },
-    { value: "technology", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-    { value: "sources", label: "Tecnología" },
-  ];
+
   const [categoria, SelectNoticias] = useSelect("general", OPCIONES);
-  const [categoriaPais, SelectPais] = useSelect("general", OPCIONESPAISES);
+  const [categoriaPais, SelectPais] = useSelect("us", PaisesSelect());
 
   //funciones
   const handleSubmit = (e) => {
     e.preventDefault();
     setCategoria(categoria);
+    setPais(categoriaPais);
   };
 
   return (
